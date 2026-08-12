@@ -1,0 +1,148 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+> 本檔內容一律使用繁體中文（台灣用語）。以下為 2026 生活營手冊專案的作業指引。
+
+---
+
+## 專案定位
+
+雯青小組 2026 年度生活營（台東，8/13–8/15）的一頁式行程手冊。
+單一自包含 HTML 檔，給小組成員用手機在營期間查看行程、導航、分房與訂餐資訊。
+
+**這不是應用程式**：沒有 build、沒有套件管理、沒有測試框架、沒有後端。
+整個交付物就是 `index.html` 一個檔案，用瀏覽器直接開就能跑。不要為它引入建置工具。
+
+---
+
+## 常用指令
+
+```bash
+# 本機預覽（擇一）
+python3 -m http.server 8000     # 開 http://localhost:8000
+start index.html                # Windows 直接用預設瀏覽器開（無外部依賴，離線可看）
+
+# 部署（推到 main 即自動觸發 GitHub Pages 重新部署，約 1–2 分鐘）
+git add -A && git commit -m "說明" && git push
+
+# 查 Pages 部署狀態
+gh api repos/{owner}/camp/pages
+gh api repos/{owner}/camp/pages/builds/latest
+```
+
+`gh` CLI 是**免安裝版**，不在 PATH 上，完整路徑：
+`%LOCALAPPDATA%\gh-cli\bin\gh.exe`
+（MSI 安裝需要系統管理員權限，所以改用 portable zip。若要少打字可自行加進 PATH。）
+
+### 驗證改動
+
+沒有自動化測試。改完 `index.html` 用 Playwright 開 `file://` 路徑截圖檢查（Chromium 已預裝），
+重點是**手機寬度 390px 不能有水平溢出**：
+
+```js
+// 在頁面上執行，必須為 true
+document.documentElement.scrollWidth <= document.documentElement.clientWidth
+```
+
+---
+
+## 檔案盤點
+
+```
+index.html                   ← 唯一的交付／部署檔案，所有 CSS/JS 都內嵌
+CLAUDE.md / README.md
+sources/                     ← 衍生資料檔（已整理成 markdown，改內容以此為準）
+  01-行程原始檔.txt
+  02-牧心餐坊訂餐統計.md       ← 8/13 晚餐訂餐明細（含單價）
+  03-愛馨會館分房表.md         ← 住宿分房與費用
+  04-地點與導航連結.md         ← 所有地點的地址、電話、Google Maps 連結（已上網查證）
+```
+
+根目錄另有使用者陸續放入的**原始素材**（截圖／PDF／文字），`sources/` 的 markdown 即由此整理而來：
+
+| 原始素材 | 對應 `sources/` |
+|---|---|
+| `住房資訊.jpg` | `03-愛馨會館分房表.md` |
+| `牧心餐坊餐點統計.pdf`、`0813晚餐資訊.jpg` | `02-牧心餐坊訂餐統計.md` |
+| `雯青小組生活營資訊.txt` | `01-行程原始檔.txt`（**位元完全相同的重複檔**） |
+| `鸞山森林博物館預定資訊.jpg` | 尚未整理進 `sources/` |
+| `2026生活營計畫總覽.png` | 主題圖，「壯大生命的三個維度」出處 |
+
+改內容時以 `sources/` 或原始素材為準，**不要憑印象改**。兩者衝突時以原始素材（截圖／PDF）為準。
+
+### 刻意不進版控的檔案（見 `.gitignore`）
+
+- `lnlifecamp2026.zip` — 整個 repo 的本機備份，內含巢狀 `.git`
+- `indexV0.html`、`indexV1.html`、`2026LNLife.html` — `index.html` 的歷史版本備份
+  （`2026LNLife.html` 與 `indexV0.html` 位元完全相同）
+
+**不要把這些歷史版本加回版控**：git 歷史已經是版本紀錄，而它們一旦進 repo
+就會在 GitHub Pages 上變成可公開存取的過期頁面（例如 `/indexV0.html`）。
+
+---
+
+## 設計決策（請沿用，不要「順手優化」掉）
+
+1. **單一檔案、零外部依賴。** 不要拆出 CSS/JS 檔，不要引入 CDN 或字型連結。使用者可能在山區訊號不良的地方開這個頁面，離線也要能看。
+2. **不使用 localStorage / sessionStorage。** 行前清單的打勾狀態刻意只存在記憶體中（重新載入就清空）。這是原始需求環境的限制，也避免跨裝置狀態混亂。
+3. **導航連結一律用 Google Maps directions API 格式**：
+   `https://www.google.com/maps/dir/?api=1&destination=<地址+地點名>`
+   手機點擊會直接開 Google Maps 導航（而非只顯示地點）。地址用百分比編碼。新增地點請照同樣格式。
+4. **電話一律用 `tel:` 連結**，讓手機可一鍵撥號。
+5. **手機版表格轉卡片。** 住宿表與訂餐表在 `max-width:640px` 時透過 `table.resp` + `data-label` 屬性轉成堆疊卡片，避免左右滑動。新增表格列時**每個 `<td>` 都要加 `data-label`**，否則手機版會缺少欄位標籤。
+6. **「壯大生命的三個維度」區塊已被使用者要求隱藏**，用 `<div hidden>` 包起來而非刪除。要恢復顯示就移除 `hidden` 屬性。
+7. JS 全部包在單一 IIFE 內（`index.html` 尾端），刻意用 ES5 語法（`var`／`function`）以相容舊手機瀏覽器。新增程式碼請沿用同一風格。
+
+### 三個互相牽動的 JS 機制
+
+都在檔尾的 IIFE 裡，改其中一個要留意另外兩個：
+
+- **倒數計時** — 硬編碼 `start = 8/13 08:00`、`end = 8/15 18:00`（`new Date(2026,7,13,...)`，月份是 0-based）。過了 `end` 自動顯示「圓滿結束」。
+- **Scroll spy** — 掃 `#nav a` 的 `href` 找出對應 section，自動高亮並把當前 chip 捲到導覽列中間。
+- **`--nav-h` 變數**（預設 `106px`）— 同時控制 sticky 導覽高度與 `section` 的 `scroll-margin-top`。改導覽高度**一定要一起改這個變數**，否則點 chip 跳轉會被導覽列遮住標題。
+
+新增區塊若要出現在導覽選單，必須同時加 `<nav class="chips">` 裡的 `<a href="#id">` 和對應的 `<section id="…">`，兩者缺一 scroll spy 就會錯位。
+
+---
+
+## 已知的資料不一致（尚未解決，請勿自行選一邊）
+
+1. **用餐人數**：行程原始檔寫「成人 16、小孩 8」＝24 人；牧心餐坊統計表寫「共 23 人；22 份餐點」。頁面上兩者都有呈現，並加了提醒請出發前與餐廳確認。**不要自行統一成其中一個數字。**
+2. **人名寫法**：交通分工欄寫「俋熊 / 昱翔」，訂餐與分房表寫「浥熊 / 昱祥」。依原始檔保留，未統一。若使用者明確指示要統一再改。
+3. **住宿名稱**：主題圖寫「利馨基金會之愛心會館」，實際查證為**勵馨基金會的愛馨會館**（台東市中興路一段110號）。頁面已使用查證後的正確名稱。
+
+---
+
+## 部署
+
+GitHub Pages，`main` 分支 / root。**檔名必須是 `index.html`**。
+推到 `main` 後約 1–2 分鐘自動重新部署。預設分支是 `main`（原本是 `master`，已改名）。
+
+### 隱私注意事項
+
+這是 **public repo**，`index.html` 內含約 20 位真實成員的**全名**（含 4 位孩童）、
+分房對應、訂餐明細與餐廳電話，網址一經公開即可被搜尋引擎索引。
+根目錄的原始素材截圖／PDF 也含相同資料。
+
+這是使用者明確選擇的（免費方案下 GitHub Pages 只支援 public repo）。
+**新增個資到頁面前請先向使用者確認**，不要自行擴大公開範圍。
+
+---
+
+## 修改後的檢查清單
+
+改動 `index.html` 之後請確認：
+
+- [ ] 手機寬度（390px）沒有水平溢出：`document.documentElement.scrollWidth <= clientWidth`
+- [ ] 新增的表格列每個 `<td>` 都有 `data-label`
+- [ ] 若改了金額或數量，重新驗算合計（目前：住宿 9 折合計 **28,620**；牧心餐坊 22 份合計 **6,330**）
+- [ ] 新增地點有 Google Maps 導航連結，且地址經過查證（不要憑記憶編地址）
+- [ ] 新增區塊已同時加入 `<nav class="chips">` 的連結與 `<section id>`
+- [ ] 若改了導覽列高度，`--nav-h` 也一起改了
+
+---
+
+## 語言
+
+所有面向使用者的文字用**繁體中文（台灣用語）**。

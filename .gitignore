@@ -1,0 +1,8 @@
+# 整個 repo 的本機備份壓縮檔（內含巢狀 .git，不應進版控）
+lnlifecamp2026.zip
+
+# index.html 的歷史版本備份。git 歷史已經是版本紀錄，
+# 且這些檔案若進 repo 會在 GitHub Pages 上變成可公開存取的過期頁面。
+indexV0.html
+indexV1.html
+2026LNLife.html
