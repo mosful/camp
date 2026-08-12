@@ -2,7 +2,7 @@
 
 雯青小組 2026 年度生活營（台東 8/13–8/15）一頁式行程手冊。
 
-**線上版**：部署後填入 → `https://mosful.github.io/camp/`
+**線上版**：https://mosful.github.io/camp/
 
 ---
 
