@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f5f57">
+<title>2026 生活營手冊｜擁抱變化，體驗生命</title>
+<meta name="description" content="2026/8/13-8/15 台東生活營行程手冊：行程時間軸、住宿分房、訂餐明細、分工交通與導航連結。">
+<style>
+:root{
+  --bg:#f6f3ea;
+  --bg2:#eef4f0;
+  --card:#ffffff;
+  --ink:#1f2f2c;
+  --ink2:#3f5551;
+  --muted:#6d827e;
+  --line:#e3e0d5;
+  --teal:#0f5f57;
+  --teal2:#17857a;
+  --teal-soft:#e2f0ec;
+  --sand:#f3e7d3;
+  --amber:#c9781f;
+  --amber-soft:#fdf1e0;
+  --violet:#6b5aa8;
+  --violet-soft:#eeeaf8;
+  --blue:#2b6ba8;
+  --blue-soft:#e6effa;
+  --rose:#b5476b;
+  --rose-soft:#fbe9ef;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(31,47,44,.05),0 8px 24px -12px rgba(31,47,44,.18);
+  --nav-h:106px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang TC","Noto Sans TC","Heiti TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%}
+a{color:var(--teal);text-decoration:none}
+
+/* ---------- Header / Nav ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,243,234,.92);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{max-width:1000px;margin:0 auto;padding:10px 16px 0}
+.brand{display:flex;align-items:center;gap:10px;min-height:34px}
+.brand .logo{
+  width:30px;height:30px;border-radius:9px;flex:none;
+  background:linear-gradient(140deg,var(--teal2),var(--teal));
+  color:#fff;display:grid;place-items:center;font-size:15px;
+}
+.brand b{font-size:15.5px;letter-spacing:.2px}
+.brand span{font-size:12.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+nav.chips{
+  display:flex;gap:8px;overflow-x:auto;padding:9px 0 10px;
+  scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;
+}
+nav.chips::-webkit-scrollbar{display:none}
+nav.chips a{
+  flex:none;scroll-snap-align:center;
+  padding:6px 13px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:14px;color:var(--ink2);font-weight:500;white-space:nowrap;
+  transition:.18s;
+}
+nav.chips a.active{background:var(--teal);border-color:var(--teal);color:#fff}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px 96px}
+section{scroll-margin-top:var(--nav-h);padding-top:34px}
+h2.sec{
+  display:flex;align-items:center;gap:10px;
+  font-size:21px;margin:0 0 4px;letter-spacing:.3px;
+}
+h2.sec .dot{width:9px;height:9px;border-radius:50%;background:var(--teal2);flex:none}
+.sec-sub{color:var(--muted);font-size:13.5px;margin:0 0 16px;padding-left:19px}
+
+/* ---------- Hero ---------- */
+.hero{
+  margin-top:18px;border-radius:24px;overflow:hidden;position:relative;
+  background:linear-gradient(155deg,#0f5f57 0%,#177a6e 45%,#2f9a7e 100%);
+  color:#fff;padding:30px 22px 26px;box-shadow:var(--shadow);
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;
+  border-radius:50%;background:rgba(255,255,255,.08);
+}
+.hero::before{
+  content:"";position:absolute;left:-60px;bottom:-90px;width:220px;height:220px;
+  border-radius:50%;background:rgba(255,255,255,.06);
+}
+.hero .kicker{font-size:12.5px;letter-spacing:3px;opacity:.85;margin:0 0 6px}
+.hero h1{font-size:29px;line-height:1.35;margin:0 0 10px;font-weight:800;position:relative}
+.hero p.lead{margin:0 0 18px;opacity:.92;font-size:15px;position:relative}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.hero-meta span{
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);
+  padding:5px 12px;border-radius:999px;font-size:13.5px;
+}
+.countdown{
+  margin-top:16px;position:relative;display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--teal);font-weight:700;font-size:14px;
+  padding:8px 16px;border-radius:999px;
+}
+
+/* ---------- Cards ---------- */
+.grid{display:grid;gap:12px}
+@media(min-width:720px){.grid.g3{grid-template-columns:repeat(3,1fr)}.grid.g2{grid-template-columns:repeat(2,1fr)}}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px;box-shadow:var(--shadow);
+}
+.card h3{margin:0 0 6px;font-size:16px}
+.card p{margin:0;color:var(--ink2);font-size:14.5px}
+.pill{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.5px;
+  padding:3px 10px;border-radius:999px;margin-bottom:8px;
+}
+.p-teal{background:var(--teal-soft);color:var(--teal)}
+.p-amber{background:var(--amber-soft);color:var(--amber)}
+.p-violet{background:var(--violet-soft);color:var(--violet)}
+.p-blue{background:var(--blue-soft);color:var(--blue)}
+.p-rose{background:var(--rose-soft);color:var(--rose)}
+
+/* ---------- Day header ---------- */
+.dayhead{
+  display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;
+  border-radius:var(--radius);padding:14px 16px;margin-bottom:14px;
+  background:linear-gradient(120deg,var(--teal-soft),#f3faf7);
+  border:1px solid #d6e8e2;
+}
+.dayhead .no{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--teal2)}
+.dayhead .dt{font-size:19px;font-weight:800;margin:0}
+.dayhead .tag{margin-left:auto;font-size:13px;color:var(--ink2)}
+
+/* ---------- Timeline ---------- */
+.tl{list-style:none;margin:0;padding:0 0 0 8px;position:relative}
+.tl::before{content:"";position:absolute;left:8px;top:10px;bottom:14px;width:2px;background:linear-gradient(var(--teal2),#cfe3dd)}
+.tl>li{position:relative;padding:0 0 14px 26px}
+.tl>li::before{
+  content:"";position:absolute;left:2px;top:9px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:3px solid var(--teal2);
+}
+.tl>li.soft::before{border-color:#b9d2cb}
+.item{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px;box-shadow:var(--shadow);
+}
+.item .time{font-size:12.5px;font-weight:800;color:var(--teal2);letter-spacing:1px}
+.item h4{margin:2px 0 4px;font-size:16.5px}
+.item .desc{margin:0;color:var(--ink2);font-size:14.5px}
+.item .addr{margin:6px 0 0;color:var(--muted);font-size:13px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:13.5px;font-weight:600;padding:7px 13px;border-radius:999px;
+  border:1px solid var(--teal);color:var(--teal);background:#fff;transition:.15s;
+}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.tel{border-color:var(--amber);color:var(--amber)}
+.btn:active{transform:scale(.97)}
+
+/* ---------- Note boxes ---------- */
+.note{
+  border-radius:14px;padding:12px 14px;font-size:14.5px;
+  border-left:4px solid var(--amber);background:var(--amber-soft);color:#6b4413;margin-top:12px;
+}
+.note.blue{border-left-color:var(--blue);background:var(--blue-soft);color:#1d456d}
+.note.rose{border-left-color:var(--rose);background:var(--rose-soft);color:#7d2842}
+.note b{color:inherit}
+.note ul{margin:6px 0 0;padding-left:20px}
+.note li{margin:2px 0}
+
+/* ---------- Tables ---------- */
+.tablewrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--teal-soft);color:var(--teal);font-size:13px;letter-spacing:.5px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fcfbf7}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.qty{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:8px;background:var(--teal);color:#fff;font-size:13px;font-weight:700}
+.sum{
+  margin-top:10px;background:var(--sand);border:1px solid #e6d5b8;border-radius:14px;
+  padding:11px 15px;font-size:14.5px;font-weight:700;color:#6b4413;
+  display:flex;flex-wrap:wrap;gap:6px 18px;
+}
+.sum span{font-weight:600}
+
+/* Mobile: turn tables into stacked cards */
+@media(max-width:640px){
+  .tablewrap{border:none;background:transparent;box-shadow:none;overflow:visible;border-radius:0}
+  table.resp{min-width:0;display:block}
+  table.resp thead{display:none}
+  table.resp tbody{display:block}
+  table.resp tr{
+    display:block;background:#fff !important;border:1px solid var(--line);border-radius:16px;
+    padding:12px 14px;margin-bottom:10px;box-shadow:var(--shadow);
+  }
+  table.resp td{display:flex;gap:10px;border:none;padding:3px 0;align-items:flex-start;font-size:14.5px}
+  table.resp td::before{
+    content:attr(data-label);flex:none;width:74px;color:var(--muted);
+    font-size:12.5px;font-weight:600;padding-top:3px;letter-spacing:.3px;
+  }
+  table.resp td.head{
+    font-size:21px;font-weight:800;color:var(--teal);
+    border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:7px;
+    display:flex;align-items:baseline;gap:8px;
+  }
+  table.resp td.head::before{width:auto;color:var(--muted);font-size:12.5px;padding-top:0}
+  table.resp td.headb{
+    font-size:16.5px;font-weight:800;color:var(--ink);display:block;
+    border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:7px;
+  }
+  table.resp td.headb::before{
+    display:block;width:auto;color:var(--teal2);font-size:11.5px;letter-spacing:1.2px;margin-bottom:1px;
+  }
+}
+
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:620px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:22px;color:var(--teal);line-height:1.3;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- Checklist ---------- */
+.check{display:grid;gap:8px}
+@media(min-width:620px){.check{grid-template-columns:repeat(2,1fr)}}
+.check label{
+  display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);
+  border-radius:13px;padding:11px 14px;font-size:15px;cursor:pointer;box-shadow:var(--shadow);
+}
+.check input{width:20px;height:20px;accent-color:var(--teal);flex:none}
+.check input:checked + span{text-decoration:line-through;color:var(--muted)}
+
+/* ---------- Contacts ---------- */
+.contact{
+  display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);
+}
+.contact .av{width:38px;height:38px;border-radius:11px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font-weight:800;flex:none}
+.contact .info{min-width:0}
+.contact .info b{display:block;font-size:15px}
+.contact .info small{color:var(--muted);font-size:12.5px}
+.contact .go{margin-left:auto;display:flex;gap:6px;flex:none}
+
+footer{
+  text-align:center;color:var(--muted);font-size:12.5px;
+  padding:28px 16px 40px;border-top:1px solid var(--line);margin-top:40px;
+}
+.totop{
+  position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--teal);font-size:19px;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(31,47,44,.18);opacity:0;pointer-events:none;transition:.25s;cursor:pointer;
+}
+.totop.show{opacity:1;pointer-events:auto}
+@media(max-width:420px){
+  .hero h1{font-size:25px}
+  .wrap{padding:0 12px 96px}
+  .topbar-inner{padding:10px 12px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="logo">⛰</div>
+      <b>2026 生活營手冊</b>
+      <span>8/13–8/15・台東</span>
+    </div>
+    <nav class="chips" id="nav">
+      <a href="#overview">總覽</a>
+      <a href="#d0">8/12 晚禱</a>
+      <a href="#d1">Day 1</a>
+      <a href="#d2">Day 2</a>
+      <a href="#d3">Day 3</a>
+      <a href="#stay">住宿分房</a>
+      <a href="#meals">訂餐明細</a>
+      <a href="#duty">分工・交通</a>
+      <a href="#packing">行前準備</a>
+      <a href="#contacts">地圖・通訊錄</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ 總覽 ============ -->
+<section id="overview" style="padding-top:0">
+  <div class="hero">
+    <p class="kicker">ＡＮＮＵＡＬ ＣＡＭＰ ２０２６</p>
+    <h1>擁抱變化，體驗生命</h1>
+    <p class="lead">雯青小組・年度生活營｜台東鸞山部落 × 東海岸 × 阿朗壹</p>
+    <div class="hero-meta">
+      <span>📅 8/12（三）晚禱 – 8/15（六）</span>
+      <span>🏠 愛馨會館</span>
+      <span>👥 成人 16 ・ 兒童 8</span>
+    </div>
+    <div class="countdown" id="countdown">載入中…</div>
+  </div>
+
+  <!-- 〔已隱藏〕壯大生命的三個維度：如要恢復顯示，把 hidden 屬性拿掉即可 -->
+  <div hidden>
+  <h2 class="sec" style="margin-top:30px"><span class="dot"></span>壯大生命的三個維度</h2>
+  <p class="sec-sub">今年生活營的核心精神</p>
+  <div class="grid g3">
+    <div class="card">
+      <span class="pill p-blue">身體的強壯</span>
+      <h3>征服挑戰</h3>
+      <p>透過登山健行，鍛鍊我們穿越各種險峻地形的能力。</p>
+    </div>
+    <div class="card">
+      <span class="pill p-violet">情感的強壯</span>
+      <h3>接納多樣</h3>
+      <p>學習與不同的人相處，不活在他人眼光下，釋放自己。</p>
+    </div>
+    <div class="card">
+      <span class="pill p-amber">靈魂的強壯</span>
+      <h3>直面現實</h3>
+      <p>認清生命有限的現實，才能活出無所畏懼的精彩人生。</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="stats" style="margin-top:26px">
+    <div class="stat"><b>4</b><span>天（含 8/12 晚禱）</span></div>
+    <div class="stat"><b>8</b><span>間房・21 床位</span></div>
+    <div class="stat"><b>28,620</b><span>住宿總額（9 折）</span></div>
+    <div class="stat"><b>22</b><span>8/13 晚餐份數</span></div>
+  </div>
+
+  <div class="note blue">
+    <b>彈性參與：</b>生活營提供「三天兩夜」與「兩天一夜」兩種參與方式，可依各家狀況選擇。
+  </div>
+</section>
+
+<!-- ============ 8/12 ============ -->
+<section id="d0">
+  <h2 class="sec"><span class="dot"></span>8/12（三）行前晚禱</h2>
+  <p class="sec-sub">出發前的預備</p>
+  <div class="dayhead">
+    <div>
+      <div class="no">ＤＡＹ ０</div>
+      <p class="dt">8/12（三）</p>
+    </div>
+    <div class="tag">小教室</div>
+  </div>
+  <ul class="tl">
+    <li>
+      <div class="item">
+        <div class="time">18:00</div>
+        <h4>小教室集合晚禱</h4>
+        <p class="desc">生活營前的集合與晚禱，請準時到場。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section id="d1">
+  <h2 class="sec"><span class="dot"></span>Day 1｜8/13（四）</h2>
+  <p class="sec-sub">南下集合 → 太麻里 → 野溪 → 台東市區晚餐 → 觀星</p>
+  <div class="dayhead">
+    <div>
+      <div class="no">ＤＡＹ １</div>
+      <p class="dt">8/13（四）</p>
+    </div>
+    <div class="tag">住宿：愛馨會館</div>
+  </div>
+
+  <ul class="tl">
+    <li>
+      <div class="item">
+        <div class="time">08:00</div>
+        <h4>各自出發</h4>
+        <p class="desc">依各車安排出發，往南迴方向前進。</p>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">集合點 ①</div>
+        <h4>屏東・枋寮加油站</h4>
+        <p class="desc">南迴前的補給與集合點。明翰車抵達後，需請 <b>士勛、語欣</b> 協助接送。</p>
+        <p class="addr">📍 屏東縣枋寮鄉（台1線沿線加油站）</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9E%8B%E5%AF%AE%E5%8A%A0%E6%B2%B9%E7%AB%99%20%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9E%8B%E5%AF%AE%E9%84%89">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">集合點 ②・時間待定</div>
+        <h4>三和・佩如阿嬤家</h4>
+        <p class="desc">太麻里三和地區，實際時間另行通知。</p>
+        <p class="addr">📍 台東縣太麻里鄉三和村</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%A4%AA%E9%BA%BB%E9%87%8C%E9%84%89%E4%B8%89%E5%92%8C%E6%9D%91">🧭 導航（三和村）</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">集合點 ③</div>
+        <h4>太麻里教會</h4>
+        <p class="addr">📍 台東縣太麻里鄉市隆路51號（台灣基督長老教會）</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%A4%AA%E9%BA%BB%E9%87%8C%E9%84%89%E5%B8%82%E9%9A%86%E8%B7%AF51%E8%99%9F%20%E5%A4%AA%E9%BA%BB%E9%87%8C%E6%95%99%E6%9C%83">🧭 導航</a>
+          <a class="btn tel" href="tel:089781211">📞 089-781211</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">中午</div>
+        <h4>太麻里用餐</h4>
+        <p class="desc">於太麻里市區用午餐（餐廳現場決定）。</p>
+        <div class="actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E9%BA%BB%E9%87%8C%20%E7%BE%8E%E9%A3%9F%20%E9%A4%90%E5%BB%B3">🍽 附近餐廳</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">下午</div>
+        <h4>野溪玩水</h4>
+        <p class="desc">地點現場視水況決定。請攜帶 <b>溯溪鞋</b> 與換洗衣物，注意孩童安全。</p>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">18:00・已訂位</div>
+        <h4>晚餐：牧心餐坊</h4>
+        <p class="desc">共 23 人／22 份餐點，訂餐明細見下方專區。牧心是憨兒庇護工場經營的社區餐坊。</p>
+        <p class="addr">📍 臺東縣臺東市豐年里民航路21號　☎ 089-230612</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E6%B0%91%E8%88%AA%E8%B7%AF21%E8%99%9F%20%E7%89%A7%E5%BF%83%E9%A4%90%E5%9D%8A">🧭 導航</a>
+          <a class="btn tel" href="tel:089230612">📞 089-230612</a>
+          <a class="btn" href="#meals">📋 我點了什麼</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">晚上</div>
+        <h4>觀星</h4>
+        <p class="desc">地點視天候安排。建議攜帶薄外套、野餐墊與防蚊液。</p>
+      </div>
+    </li>
+    <li class="soft">
+      <div class="item">
+        <div class="time">住宿</div>
+        <h4>愛馨會館</h4>
+        <p class="desc">勵馨基金會經營的公益旅店，房費由 <b>若珈</b> 現場支付。</p>
+        <p class="addr">📍 台東市中興路一段110號　☎ 089-228288</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5110%E8%99%9F%20%E6%84%9B%E9%A6%A8%E6%9C%83%E9%A4%A8">🧭 導航</a>
+          <a class="btn tel" href="tel:089228288">📞 089-228288</a>
+          <a class="btn" href="#stay">🛏 我住哪一間</a>
+        </div>
+      </div>
+    </li>
+    <li class="soft">
+      <div class="item">
+        <div class="time">睡前</div>
+        <h4>晚禱</h4>
+        <p class="desc">內容待安排。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section id="d2">
+  <h2 class="sec"><span class="dot"></span>Day 2｜8/14（五）</h2>
+  <p class="sec-sub">鸞山森林博物館 → 紅葉野溪 → 加路蘭 → 佳廚食坊</p>
+  <div class="dayhead">
+    <div>
+      <div class="no">ＤＡＹ ２</div>
+      <p class="dt">8/14（五）</p>
+    </div>
+    <div class="tag">住宿：愛馨會館</div>
+  </div>
+
+  <div class="note rose">
+    <b>⚠️ 今日必帶：</b>
+    <ul>
+      <li><b>自備碗筷</b>（鸞山不可使用免洗餐具；現場租借碗筷一組 2 元）</li>
+      <li><b>見面禮：米酒 1 瓶 + 檳榔 1 包</b> —— 由 <b>建良</b> 負責準備</li>
+      <li><b>溯溪鞋</b>（下午紅葉野溪）</li>
+    </ul>
+  </div>
+
+  <ul class="tl">
+    <li>
+      <div class="item">
+        <div class="time">早餐</div>
+        <h4>各自解決</h4>
+        <p class="desc">會館周邊台東市區有多家早餐店。</p>
+        <div class="actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5%20%E6%97%A9%E9%A4%90%E5%BA%97">☕ 附近早餐</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">08:00</div>
+        <h4>出發前往鸞山</h4>
+        <p class="desc">會館到鸞山車程約 50 分鐘，請預留時間。</p>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">09:00 – 13:00</div>
+        <h4>鸞山森林文化博物館／鸞山部落</h4>
+        <p class="desc">布農族「會走路的樹」生態文化之旅，含中午烤肉與活力飲。行程由 <b>建良</b> 負責聯繫，<b>費用當天交給建良</b>。</p>
+        <p class="addr">📍 台東縣延平鄉鸞山村鸞山路21號（集合點：鸞山派出所・197線道 41K）　☎ 0911-154-806</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E9%B8%9E%E5%B1%B1%E6%9D%91%E9%B8%9E%E5%B1%B1%E8%B7%AF21%E8%99%9F%20%E9%B8%9E%E5%B1%B1%E6%A3%AE%E6%9E%97%E6%96%87%E5%8C%96%E5%8D%9A%E7%89%A9%E9%A4%A8">🧭 導航（博物館）</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E9%B8%9E%E5%B1%B1%E6%B4%BE%E5%87%BA%E6%89%80%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89">🧭 集合點（派出所）</a>
+          <a class="btn tel" href="tel:0911154806">📞 0911-154-806</a>
+        </div>
+        <div class="note" style="margin-top:10px">
+          博物館前一天會 <b>電話確認人數與集合時間</b>；若未接到電話會改以簡訊通知。結帳人數以前一天確認為準，當天恕不臨時更改。
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">下午</div>
+        <h4>紅葉野溪（紅葉溫泉）</h4>
+        <p class="desc">距鸞山約 25 分鐘車程。溪床濕滑，<b>務必穿溯溪鞋</b>，孩童需大人全程陪同。</p>
+        <p class="addr">📍 台東縣延平鄉紅葉村（紅葉溫泉／紅橋野溪溫泉）</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E7%B4%85%E8%91%89%E9%87%8E%E6%BA%AA%E6%BA%AB%E6%B3%89%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E7%B4%85%E8%91%89%E6%9D%91">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">傍晚</div>
+        <h4>加路蘭遊憩區</h4>
+        <p class="desc">台11線上的海岸休憩區，漂流木地景藝術與草地看海，適合全家拍照與吹風。免門票。</p>
+        <p class="addr">📍 台東縣台東市（台11線 157.7K，小野柳旁）</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8A%A0%E8%B7%AF%E8%98%AD%E9%81%8A%E6%86%A9%E5%8D%80%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%8F%B0%E6%9D%B1%E5%B8%82">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">18:00・已訂位</div>
+        <h4>晚餐：佳廚食坊</h4>
+        <p class="desc">台東在地家常菜合菜，成人 16（含秉翰車）、小孩 8。</p>
+        <p class="addr">📍 臺東縣臺東市新生里傳廣路479號</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E5%82%B3%E5%BB%A3%E8%B7%AF479%E8%99%9F%20%E4%BD%B3%E5%BB%9A%E9%A3%9F%E5%9D%8A">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li class="soft">
+      <div class="item">
+        <div class="time">睡前</div>
+        <h4>晚禱</h4>
+        <p class="desc">內容待安排。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section id="d3">
+  <h2 class="sec"><span class="dot"></span>Day 3｜8/15（六）</h2>
+  <p class="sec-sub">阿朗壹古道 → 南田石 → 東港華僑市場 → 賦歸</p>
+  <div class="dayhead">
+    <div>
+      <div class="no">ＤＡＹ ３</div>
+      <p class="dt">8/15（六）</p>
+    </div>
+    <div class="tag">回程日</div>
+  </div>
+
+  <ul class="tl">
+    <li>
+      <div class="item">
+        <div class="time">早餐</div>
+        <h4>各自解決＋退房</h4>
+        <p class="desc">請確認行李與個人物品收齊。</p>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">08:00</div>
+        <h4>出發</h4>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">上午</div>
+        <h4>阿朗壹古道（頭尾走訪）</h4>
+        <p class="desc">台灣僅存未開發的海岸古道，位於台東達仁「南田端」與屏東牡丹「旭海端」之間。<b>全程需事先申請、由持證解說員帶隊、每日總量管制</b>；本次為「頭尾」踩點，請依現場安排行動。夏季日照強，務必備水與防曬。</p>
+        <p class="addr">📍 南田端入口：台東縣達仁鄉南田村｜旭海端入口：屏東縣牡丹鄉旭海村</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E9%98%BF%E6%9C%97%E5%A3%B9%E5%8F%A4%E9%81%93%20%E5%8D%97%E7%94%B0%E5%85%A5%E5%8F%A3%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E9%81%94%E4%BB%81%E9%84%89">🧭 南田端</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E9%98%BF%E6%9C%97%E5%A3%B9%E5%8F%A4%E9%81%93%20%E6%97%AD%E6%B5%B7%E5%85%A5%E5%8F%A3%20%E5%B1%8F%E6%9D%B1%E7%B8%A3%E7%89%A1%E4%B8%B9%E9%84%89%E6%97%AD%E6%B5%B7%E6%9D%91">🧭 旭海端</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">上午</div>
+        <h4>南田石・南田海岸親水公園</h4>
+        <p class="desc">著名的南田石海岸，礫石灘與太平洋一線天。提醒：<b>南田石屬保育資源，請勿撿拾攜回</b>。</p>
+        <p class="addr">📍 台東縣達仁鄉南田村（台26線）</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%97%E7%94%B0%E6%B5%B7%E5%B2%B8%E8%A6%AA%E6%B0%B4%E5%85%AC%E5%9C%92%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E9%81%94%E4%BB%81%E9%84%89">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item">
+        <div class="time">中午</div>
+        <h4>東港華僑市場・海鮮午餐</h4>
+        <p class="desc">東港漁港漁產品直銷中心，生魚片、黑鮪魚、櫻花蝦、雙糕潤。假日人潮多，建議先分工找停車位。</p>
+        <p class="addr">📍 屏東縣東港鎮朝隆路43號</p>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9D%B1%E6%B8%AF%E9%8E%AE%E6%9C%9D%E9%9A%86%E8%B7%AF43%E8%99%9F%20%E8%8F%AF%E5%83%91%E5%B8%82%E5%A0%B4">🧭 導航</a>
+        </div>
+      </div>
+    </li>
+    <li class="soft">
+      <div class="item">
+        <div class="time">機動</div>
+        <h4>✨ 預備行程：牧師爸爸養殖場</h4>
+        <p class="desc">視時間彈性安排於第一天或最後一天。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ 住宿 ============ -->
+<section id="stay">
+  <h2 class="sec"><span class="dot"></span>住宿與分房</h2>
+  <p class="sec-sub">愛馨會館・8/13、8/14 兩晚</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <span class="pill p-teal">ＨＯＴＥＬ</span>
+    <h3>愛馨會館（勵馨基金會公益旅店）</h3>
+    <p>台灣首間公益旅店，營收用於培力台東弱勢婦女就業。位於台東市區，鄰近鐵花村與觀光夜市。</p>
+    <p class="addr" style="color:var(--muted);font-size:13px;margin-top:6px">📍 950 台東市中興路一段110號　☎ 089-228288</p>
+    <div class="actions">
+      <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5110%E8%99%9F%20%E6%84%9B%E9%A6%A8%E6%9C%83%E9%A4%A8">🧭 導航</a>
+      <a class="btn tel" href="tel:089228288">📞 089-228288</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://ising.goh.org.tw/">🌐 官網</a>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="resp">
+      <thead>
+        <tr>
+          <th>房號</th><th>入住名單</th><th>房型</th><th>配置</th>
+          <th class="num">單價/晚</th><th class="num">可睡</th><th class="num">2 晚小計</th><th class="num">9 折</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="head" data-label="房號">301</td><td data-label="入住">碧容明翰家</td><td data-label="房型">簡約雅致雙人房</td><td data-label="配置">一大床</td><td class="num" data-label="單價/晚">1,700</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">3,400</td><td class="num" data-label="9 折">3,060</td></tr>
+        <tr><td class="head" data-label="房號">302</td><td data-label="入住">阿雯家</td><td data-label="房型">迷你商務雙人房</td><td data-label="配置">兩小床</td><td class="num" data-label="單價/晚">1,300</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">2,600</td><td class="num" data-label="9 折">2,340</td></tr>
+        <tr><td class="head" data-label="房號">303</td><td data-label="入住">阿雯家</td><td data-label="房型">簡約雅致雙人房</td><td data-label="配置">一大床</td><td class="num" data-label="單價/晚">1,700</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">3,400</td><td class="num" data-label="9 折">3,060</td></tr>
+        <tr><td class="head" data-label="房號">305</td><td data-label="入住">士勛語欣家</td><td data-label="房型">簡約商務雙人房</td><td data-label="配置">兩小床</td><td class="num" data-label="單價/晚">1,700</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">3,400</td><td class="num" data-label="9 折">3,060</td></tr>
+        <tr><td class="head" data-label="房號">307</td><td data-label="入住">昱祥浥熊家</td><td data-label="房型">簡約商務雙人房</td><td data-label="配置">兩小床</td><td class="num" data-label="單價/晚">1,700</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">3,400</td><td class="num" data-label="9 折">3,060</td></tr>
+        <tr><td class="head" data-label="房號">308</td><td data-label="入住">建良家</td><td data-label="房型">工業風五人房</td><td data-label="配置">五小床</td><td class="num" data-label="單價/晚">3,600</td><td class="num" data-label="可睡">5 人</td><td class="num" data-label="2 晚">7,200</td><td class="num" data-label="9 折">6,480</td></tr>
+        <tr><td class="head" data-label="房號">501</td><td data-label="入住">怡心</td><td data-label="房型">原木雅致雙人房</td><td data-label="配置">一大床</td><td class="num" data-label="單價/晚">1,400</td><td class="num" data-label="可睡">2 人</td><td class="num" data-label="2 晚">2,800</td><td class="num" data-label="9 折">2,520</td></tr>
+        <tr><td class="head" data-label="房號">508</td><td data-label="入住">俊融家</td><td data-label="房型">溫馨家庭房</td><td data-label="配置">兩大床</td><td class="num" data-label="單價/晚">2,800</td><td class="num" data-label="可睡">4 人</td><td class="num" data-label="2 晚">5,600</td><td class="num" data-label="9 折">5,040</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sum">
+    <div>8 間房</div><div>21 個床位</div><div>原價 <span>31,800</span></div><div>9 折應付 <span>28,620 元</span></div>
+  </div>
+  <div class="note">💰 房間費用由 <b>若珈</b> 現場支付，價格已為 9 折含稅、兩晚計價。</div>
+</section>
+
+<!-- ============ 餐點 ============ -->
+<section id="meals">
+  <h2 class="sec"><span class="dot"></span>訂餐明細</h2>
+  <p class="sec-sub">8/13 牧心餐坊（已訂位）・8/14 佳廚食坊（已訂位）</p>
+
+  <div class="dayhead" style="background:linear-gradient(120deg,var(--amber-soft),#fffaf2);border-color:#f0dcc0">
+    <div>
+      <div class="no" style="color:var(--amber)">８／１３（四）１８:００</div>
+      <p class="dt">牧心餐坊</p>
+    </div>
+    <div class="tag">共 23 人・22 份餐點</div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="resp">
+      <thead><tr><th>餐點名稱</th><th class="num">數量</th><th>訂餐人與飲料</th></tr></thead>
+      <tbody>
+        <tr><td class="headb" data-label="兒童餐">兒童餐——人氣燒肉</td><td class="num" data-label="數量"><span class="qty">4</span></td><td data-label="訂餐人">林允晞、陳正毅、陳芷琳、謝艾耘</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）泰式椒麻雞</td><td class="num" data-label="數量"><span class="qty">3</span></td><td data-label="訂餐人">蘇怡心（紅茶）、李明翰（菊花普洱茶）、許碧容（紅茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）涼拌松阪豬</td><td class="num" data-label="數量"><span class="qty">3</span></td><td data-label="訂餐人">林岦暘（紅茶）、戴珮如（綠茶）、謝秉翰（紅茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）石板烤肉</td><td class="num" data-label="數量"><span class="qty">2</span></td><td data-label="訂餐人">陳俊融（紅茶）、吳光守（紅茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）清蒸海上鮮鱸魚</td><td class="num" data-label="數量"><span class="qty">2</span></td><td data-label="訂餐人">高士勛（紅茶）、丘純瑜（菊花普洱茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）日式厚切豬排</td><td class="num" data-label="數量"><span class="qty">2</span></td><td data-label="訂餐人">呂浥熊（紅茶）、吳光立（綠茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）塔香三杯雞</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">曾若珈（菊花普洱茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）酒香醉雞</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">莊語欣（綠茶）</td></tr>
+        <tr><td class="headb" data-label="套餐">（套）東漂鬼頭刀</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">謝宗叡（紅茶）</td></tr>
+        <tr><td class="headb" data-label="簡餐">（簡）人氣燒肉</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">林建良（無飲料）</td></tr>
+        <tr><td class="headb" data-label="簡餐">（簡）泰式魚塊</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">黃昱祥（無飲料）</td></tr>
+        <tr><td class="headb" data-label="簡餐">（簡）養生豬腳</td><td class="num" data-label="數量"><span class="qty">1</span></td><td data-label="訂餐人">吳明漢（無飲料）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sum">
+    <div>共 <span>22 份</span></div><div>紅茶 <span>9</span></div><div>菊花普洱茶 <span>3</span></div><div>綠茶 <span>3</span></div><div>無飲料 <span>3</span></div><div>兒童餐 <span>4</span></div>
+  </div>
+  <div class="actions" style="margin-top:12px">
+    <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E6%B0%91%E8%88%AA%E8%B7%AF21%E8%99%9F%20%E7%89%A7%E5%BF%83%E9%A4%90%E5%9D%8A">🧭 導航｜民航路21號</a>
+    <a class="btn tel" href="tel:089230612">📞 089-230612</a>
+  </div>
+
+  <div class="dayhead" style="margin-top:26px;background:linear-gradient(120deg,var(--violet-soft),#f7f5fd);border-color:#ded7f2">
+    <div>
+      <div class="no" style="color:var(--violet)">８／１４（五）１８:００</div>
+      <p class="dt">佳廚食坊</p>
+    </div>
+    <div class="tag">成人 16（含秉翰車）・小孩 8</div>
+  </div>
+  <div class="card">
+    <p>台東在地家常菜合菜餐廳，已完成訂位。菜色現場統一安排。</p>
+    <p class="addr" style="color:var(--muted);font-size:13px;margin-top:6px">📍 臺東縣臺東市新生里傳廣路479號</p>
+    <div class="actions">
+      <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E5%82%B3%E5%BB%A3%E8%B7%AF479%E8%99%9F%20%E4%BD%B3%E5%BB%9A%E9%A3%9F%E5%9D%8A">🧭 導航</a>
+    </div>
+  </div>
+
+  <div class="note blue">
+    📌 兩餐皆已訂位；行程原始紀錄之人數為「成人 16、小孩 8」，牧心統計表為「23 人／22 份」，出發前請再與餐廳確認一次最終人數。
+  </div>
+</section>
+
+<!-- ============ 分工 ============ -->
+<section id="duty">
+  <h2 class="sec"><span class="dot"></span>分工與交通</h2>
+  <p class="sec-sub">誰負責什麼、誰坐哪一台車</p>
+
+  <div class="grid g3">
+    <div class="card">
+      <span class="pill p-teal">若珈</span>
+      <h3>住宿費用</h3>
+      <p>房間費用現場支付（共 28,620 元）。</p>
+    </div>
+    <div class="card">
+      <span class="pill p-amber">建良</span>
+      <h3>鸞山森林博物館</h3>
+      <p>09:00–12:00（含午餐）行程聯繫；<b>費用當天交給建良</b>。另負責準備見面禮：米酒 1 瓶、檳榔 1 包。</p>
+    </div>
+    <div class="card">
+      <span class="pill p-blue">明翰</span>
+      <h3>保險</h3>
+      <p>聯絡立程辦理旅遊平安保險。</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <span class="pill p-violet">ＴＲＡＮＳＰＯＲＴ</span>
+    <h3>交通安排</h3>
+    <p>
+      • <b>明翰車</b>：載 俋熊、怡心、昱翔<br>
+      • 抵達 <b>屏東枋寮加油站</b> 後，需請 <b>士勛、語欣</b> 接送<br>
+      • 其他車輛皆已滿車
+    </p>
+    <div class="actions">
+      <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9E%8B%E5%AF%AE%E5%8A%A0%E6%B2%B9%E7%AB%99%20%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9E%8B%E5%AF%AE%E9%84%89">🧭 枋寮集合點</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 行前準備 ============ -->
+<section id="packing">
+  <h2 class="sec"><span class="dot"></span>行前準備清單</h2>
+  <p class="sec-sub">可直接點選打勾（僅本次瀏覽有效）</p>
+  <div class="check">
+    <label><input type="checkbox"><span>防蚊液</span></label>
+    <label><input type="checkbox"><span>防曬用品（帽子、袖套）</span></label>
+    <label><input type="checkbox"><span>快乾衣物（避免棉質）</span></label>
+    <label><input type="checkbox"><span>備用換洗衣物</span></label>
+    <label><input type="checkbox"><span>溯溪鞋（野溪必備）</span></label>
+    <label><input type="checkbox"><span>自備餐具（碗＋筷，鸞山不可用免洗）</span></label>
+    <label><input type="checkbox"><span>大浴巾／速乾毛巾</span></label>
+    <label><input type="checkbox"><span>個人藥品、健保卡</span></label>
+    <label><input type="checkbox"><span>足夠飲用水</span></label>
+    <label><input type="checkbox"><span>薄外套（夜間觀星）</span></label>
+    <label><input type="checkbox"><span>行動電源、充電線</span></label>
+    <label><input type="checkbox"><span>現金（鸞山費用、房費分攤）</span></label>
+  </div>
+  <div class="note">
+    🥢 <b>鸞山特別提醒：</b>一日遊需自備碗筷用餐，<b>不得使用免洗餐具</b>；也可在現場租借碗筷一組 2 元。半日遊不需準備碗筷。
+  </div>
+</section>
+
+<!-- ============ 通訊錄 ============ -->
+<section id="contacts">
+  <h2 class="sec"><span class="dot"></span>地點總覽・快速通訊錄</h2>
+  <p class="sec-sub">點「🧭」直接開啟 Google 導航，點電話直接撥號</p>
+
+  <div class="grid" style="gap:10px">
+    <div class="contact">
+      <div class="av">住</div>
+      <div class="info"><b>愛馨會館</b><small>台東市中興路一段110號</small></div>
+      <div class="go">
+        <a class="btn tel" href="tel:089228288">📞</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5110%E8%99%9F%20%E6%84%9B%E9%A6%A8%E6%9C%83%E9%A4%A8">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">餐</div>
+      <div class="info"><b>牧心餐坊</b><small>台東市民航路21號・8/13 18:00</small></div>
+      <div class="go">
+        <a class="btn tel" href="tel:089230612">📞</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E6%B0%91%E8%88%AA%E8%B7%AF21%E8%99%9F%20%E7%89%A7%E5%BF%83%E9%A4%90%E5%9D%8A">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">餐</div>
+      <div class="info"><b>佳廚食坊</b><small>台東市傳廣路479號・8/14 18:00</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E8%87%BA%E6%9D%B1%E7%B8%A3%E8%87%BA%E6%9D%B1%E5%B8%82%E5%82%B3%E5%BB%A3%E8%B7%AF479%E8%99%9F%20%E4%BD%B3%E5%BB%9A%E9%A3%9F%E5%9D%8A">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">遊</div>
+      <div class="info"><b>鸞山森林文化博物館</b><small>延平鄉鸞山村鸞山路21號・8/14 09:00</small></div>
+      <div class="go">
+        <a class="btn tel" href="tel:0911154806">📞</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E9%B8%9E%E5%B1%B1%E6%9D%91%E9%B8%9E%E5%B1%B1%E8%B7%AF21%E8%99%9F">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">教</div>
+      <div class="info"><b>太麻里教會</b><small>太麻里鄉市隆路51號</small></div>
+      <div class="go">
+        <a class="btn tel" href="tel:089781211">📞</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%A4%AA%E9%BA%BB%E9%87%8C%E9%84%89%E5%B8%82%E9%9A%86%E8%B7%AF51%E8%99%9F">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">溪</div>
+      <div class="info"><b>紅葉野溪溫泉</b><small>延平鄉紅葉村</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E7%B4%85%E8%91%89%E9%87%8E%E6%BA%AA%E6%BA%AB%E6%B3%89%20%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">海</div>
+      <div class="info"><b>加路蘭遊憩區</b><small>台東市・台11線157.7K</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8A%A0%E8%B7%AF%E8%98%AD%E9%81%8A%E6%86%A9%E5%8D%80">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">道</div>
+      <div class="info"><b>阿朗壹古道・南田端</b><small>達仁鄉南田村</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E9%98%BF%E6%9C%97%E5%A3%B9%E5%8F%A4%E9%81%93%20%E5%8D%97%E7%94%B0%E5%85%A5%E5%8F%A3">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">道</div>
+      <div class="info"><b>阿朗壹古道・旭海端</b><small>屏東縣牡丹鄉旭海村</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E9%98%BF%E6%9C%97%E5%A3%B9%E5%8F%A4%E9%81%93%20%E6%97%AD%E6%B5%B7%E5%85%A5%E5%8F%A3">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">石</div>
+      <div class="info"><b>南田海岸親水公園</b><small>達仁鄉南田村・南田石</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%97%E7%94%B0%E6%B5%B7%E5%B2%B8%E8%A6%AA%E6%B0%B4%E5%85%AC%E5%9C%92">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">市</div>
+      <div class="info"><b>東港華僑市場</b><small>屏東縣東港鎮朝隆路43號・8/15 午餐</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9D%B1%E6%B8%AF%E9%8E%AE%E6%9C%9D%E9%9A%86%E8%B7%AF43%E8%99%9F%20%E8%8F%AF%E5%83%91%E5%B8%82%E5%A0%B4">🧭</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="av">集</div>
+      <div class="info"><b>枋寮加油站</b><small>屏東縣枋寮鄉・8/13 集合點</small></div>
+      <div class="go">
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9E%8B%E5%AF%AE%E5%8A%A0%E6%B2%B9%E7%AB%99%20%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%9E%8B%E5%AF%AE%E9%84%89">🧭</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="note blue">
+    ℹ️ 部分地點（三和佩如阿嬤家、Day 1 野溪、觀星點、太麻里午餐）為現場決定或私人地址，導航連結指向該區域，實際位置請以群組通知為準。
+  </div>
+</section>
+
+</div>
+
+<footer>
+  2026 生活營手冊・雯青小組｜資料來源：行程規劃檔、牧心餐坊訂餐統計、愛馨會館分房表<br>
+  地址與電話經網路查證（2026/08），出發前建議再次電話確認。
+</footer>
+
+<button class="totop" id="totop" aria-label="回到頂端">↑</button>
+
+<script>
+(function(){
+  // ---- Countdown / status ----
+  var el = document.getElementById('countdown');
+  var start = new Date(2026,7,13,8,0,0);   // 8/13 08:00
+  var end   = new Date(2026,7,15,18,0,0);  // 8/15 18:00
+  var now = new Date();
+  var txt;
+  if(now < start){
+    var d = Math.ceil((start - now)/86400000);
+    txt = d <= 1 ? '⏰ 明天出發！請完成行前準備' : '⏰ 距離出發還有 ' + d + ' 天';
+  } else if(now <= end){
+    var dayNo = Math.floor((now - start)/86400000) + 1;
+    txt = '🔥 生活營進行中・Day ' + dayNo;
+  } else {
+    txt = '🎉 2026 生活營圓滿結束，明年見！';
+  }
+  el.textContent = txt;
+
+  // ---- Scroll spy ----
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var nav = document.getElementById('nav');
+  function spy(){
+    var pos = window.scrollY + 150, idx = 0;
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop <= pos) idx = i; }
+    links.forEach(function(a,i){
+      if(i===idx){
+        if(!a.classList.contains('active')){
+          a.classList.add('active');
+          var target = a.offsetLeft - nav.clientWidth/2 + a.clientWidth/2;
+          nav.scrollTo({left: target, behavior:'smooth'});
+        }
+      } else a.classList.remove('active');
+    });
+    document.getElementById('totop').classList.toggle('show', window.scrollY > 500);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){ window.requestAnimationFrame(function(){ spy(); ticking=false; }); ticking=true; }
+  }, {passive:true});
+  spy();
+
+  document.getElementById('totop').addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
