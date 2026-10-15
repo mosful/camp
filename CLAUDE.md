@@ -52,6 +52,7 @@ document.documentElement.scrollWidth <= document.documentElement.clientWidth
 ```
 index.html                   ← 唯一的交付／部署檔案，所有 CSS/JS 都內嵌
 CLAUDE.md / README.md
+docs/旅遊網站教學-Prompt指南.md ← 教新手以本 repo 為範本自製旅遊網站的分階段 prompt（非網站內容）
 sources/                     ← 衍生資料檔（已整理成 markdown，改內容以此為準）
   01-行程原始檔.txt
   02-牧心餐坊訂餐統計.md       ← 8/13 晚餐訂餐明細（含單價）
